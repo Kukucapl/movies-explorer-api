@@ -45,7 +45,7 @@ module.exports.getCurrentUser = (req, res, next) => {
       if (!user) {
         next(new NotFound('Пользователь не найден'));
       } else {
-        res.status(200).send({ email: user.email, name: user.name });
+        res.status(200).send({ email: user.email, name: user.name, id: user._id });
       }
     })
     .catch((err) => {
@@ -65,6 +65,8 @@ module.exports.updateProfile = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequest('Переданы некорректные данные при обновлении профиля'));
+      } else if (err.code === 11000) {
+        next(new Conflict('Пользователь с таким email уже существует'));
       } else if (err.name === 'CastError') {
         next(new BadRequest('Ошибка в id пользователя'));
       } else {
