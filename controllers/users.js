@@ -45,7 +45,7 @@ module.exports.getCurrentUser = (req, res, next) => {
       if (!user) {
         next(new NotFound('Пользователь не найден'));
       } else {
-        res.status(200).send({ email: user.email, name: user.name, id: user._id });
+        res.status(200).send({ email: user.email, name: user.name, _id: user._id });
       }
     })
     .catch((err) => {
