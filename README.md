@@ -1,5 +1,14 @@
-# movies-explorer-api
+# Дипломная работа "Movies explorer". Backend
 
-IP 158.160.29.38
+## Описание:
+Приложение для поиска фильмов. Присутствует регистрация, авторизация, есть возможность редактировать профиль, добавлять фильмы в закладки и удалять их оттуда. Главная страница рассказывает о работе над проектом и используемых в нем технологиях. Поля ввода валидируются
 
-Backend https://api.diplom.kukucapl.nomoredomains.work
+В ход шло всякое: `express`, `mongoose`, `JWT`, `celebrate`, `cors`, `helmet`
+
+## Для локального запуска
+Клонируйте репозиторий `git clone https://github.com/Kukucapl/movies-explorer-api.git`
+В дериктории movies-explorer-api установите необходимые пакеты `npm install`
+Запустите `npm run dev`
+Поделано!
+
+[Frontend](https://github.com/Kukucapl/movies-explorer-frontend/tree/main)
